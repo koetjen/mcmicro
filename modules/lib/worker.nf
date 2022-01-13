@@ -25,6 +25,7 @@
 //   .${module.name}Opts - custom module parameters specified via --${module.name}-opts
 process worker {
     container "${params.contPfx}${module.container}:${module.version}"
+    label "${module.name}"
     tag "${module.name}-${task.index}"
     
     // Output files in the pre-configured output format (outfmt) and optional plots
